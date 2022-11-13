@@ -2,12 +2,14 @@ package Avto;
 
 public class Car extends Transport implements Competing {
     private final TypeBody typeBody;
+
     public Car(String brand, String model, double engineVolume, double pitStop, double bestLapTime, double maxSpeed, TypeBody typeBody) {
         super(brand, model, engineVolume, pitStop, bestLapTime, maxSpeed);
         this.typeBody = typeBody;
     }
 
-    public enum TypeBody {SEDAN("Седан"), HATCHBACK("Хэтчбэк"), COUPE("Купе"), UNIVERSAL("Универсал"), JEEP("Внедорожник"), CROSSOVER("Кроссовер"), PICKUP("Пикап"), VAN("Фургон"), MINIVAN("Минивэн");
+    public enum TypeBody {
+        SEDAN("Седан"), HATCHBACK("Хэтчбэк"), COUPE("Купе"), UNIVERSAL("Универсал"), JEEP("Внедорожник"), CROSSOVER("Кроссовер"), PICKUP("Пикап"), VAN("Фургон"), MINIVAN("Минивэн");
         private final String name;
 
         TypeBody(String name) {
@@ -27,9 +29,18 @@ public class Car extends Transport implements Competing {
     public TypeBody getTypeBody() {
         return typeBody;
     }
+
+    public void printType() {
+        if (this.typeBody == null) {
+            System.out.println("Данных недостаточно");
+        } else {
+            System.out.println("Тип кузова " + this.typeBody);
+        }
+    }
+
     @Override
     public String infoEnum() {
-        return getModel()+ " " + getBrand() + " Тип кузова "+getTypeBody();
+        return getModel() + " " + getBrand() + " Тип кузова " + getTypeBody();
     }
 
     @Override

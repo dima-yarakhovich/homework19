@@ -24,13 +24,21 @@ public class Bus extends Transport implements Competing {
         public String toString() {
             String fromCapacityString = fromCapacity != null ? "от " + fromCapacity : "";
             String toCapacityString = toCapacity != 0 ? " до " + toCapacity + " мест" : "";
-            return "Вместимость " + fromCapacityString + toCapacityString;
+            return "Вместимость автобуса" + fromCapacityString + toCapacityString;
 
         }
     }
 
     public PasCapacity getPasCapacity() {
         return pasCapacity;
+    }
+
+    public void printType() {
+        if (this.pasCapacity == null) {
+            System.out.println("Данных недостаточно");
+        } else {
+            System.out.println(this.pasCapacity);
+        }
     }
 
     @Override

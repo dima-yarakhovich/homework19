@@ -38,6 +38,9 @@ public class Main {
 //        System.out.println(driverB);
 //        Audi.startMoving();
 //        Hyundai.stopMoving();
+        MB.printType();
+        VW.printType();
+        Daf.printType();
         infoAuto(lada, Crafter, hyundai, Hyundai, MAZ);
     }
 

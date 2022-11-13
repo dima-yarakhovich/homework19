@@ -31,13 +31,21 @@ public class Truck extends Transport implements Competing {
             String fromCapacityString = fromCapacity != null
                     ? "от " + fromCapacity : "";
             String toCapacityString = toCapacity != null
-                    ? "до " + toCapacity + " тонн" : "";
-            return "Грузоподъемность " + fromCapacityString + toCapacityString;
+                    ? " до " + toCapacity + " тонн" : "";
+            return "Грузоподъемность автомобиля " + fromCapacityString + toCapacityString;
         }
     }
 
     public LoadCapacity getLoadCapacity() {
         return loadCapacity;
+    }
+
+    public void printType() {
+        if (this.loadCapacity == null) {
+            System.out.println("Данных недостаточно");
+        } else {
+            System.out.println(this.loadCapacity);
+        }
     }
 
     @Override
